@@ -8,22 +8,25 @@ public class Method implements GirisCikisInterface {
     public static final String G = "\u001B[32m";
     public static final String Y = "\u001B[33m";
     public static final String B = "\u001B[34m";
-    static Scanner scan = new Scanner(System.in);
+    public static final String k = "U+1F347";
+
+     static Scanner scan = new Scanner(System.in);
     static int id=1000;
     static HashMap<Integer,UrunTanimlama> urunler=new HashMap<>();
     static int count=0;
+
     public void girisPaneli(){
 
-        System.out.println(Y+ "========================== İŞLEMLER =======================\r\n"
+        System.out.println(k+ G+ "========================== İŞLEMLER =======================\r\n"
                 + "   ____________________              ____________________   \n"
-                + "   | 1-URUN TANIMLAMA |              |  2-URUN LİSTELE  |   \n"
+                + "   | 1-URUN TANIMLAMA   |              |  2-URUN LİSTELE  |   \n"
                 + "   ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯              ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯   \n"
                 + "   ____________________              ____________________   \n"
                 + "   | 3-URUN GIRISI    |              |  4-URUN RAFA KOY |   \n"
                 + "   ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯              ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯   \n"
                 + "   ____________________              ____________________   \n"
                 + "   | 5-URUN CIKISI    |              |  6-BITIRME       |   \n"
-                + "   ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯              ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯  "+R);
+                + "   ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯              ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯  "+W);
 
         System.out.print("Yapmak istediginiz islem : ");
 
