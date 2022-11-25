@@ -9,10 +9,11 @@ import static P11_depoYonetimi.depoYonetimi05.Variables.urunlerMap;
 
 public class urunListele {
     public static void urunListele() {
+
         System.out.printf("%-9s %-10s %-10s %-10s %-10s %-10s\n", "ID", " Ürün", " Üretici", "Miktar", "Cuval", "Raf");
         System.out.println("====================================================================================");
         Set<Integer> keySets = urunlerMap.keySet();
-        Collection<List> valueSet = urunlerMap.values();
+
         for (Integer each : keySets) {
             List<Urun> valuesList = new ArrayList<>();
             valuesList = urunlerMap.get(each);
@@ -23,5 +24,6 @@ public class urunListele {
                 index++;
             }
         }
+
     }
 }

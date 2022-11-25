@@ -1,40 +1,57 @@
 package P11_depoYonetimi.Team04_depoYonetimi;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
-public class Methods {
+import static P11_depoYonetimi.Team04_depoYonetimi.Giris.*;
+import static P11_depoYonetimi.Team04_depoYonetimi.TryCatch.illegalArgumentExceptionEkleme;
+import static P11_depoYonetimi.Team04_depoYonetimi.TryCatch.illegalArgumentExceptionEklemeString;
+
+
+public class Methods  {
     static int id=99;
     static HashMap<Integer, Urun> urunler=new HashMap<>();
     public static Scanner sc = new Scanner(System.in);
 
     public  static void urunTanimlama(){
         System.out.println("Kaç urun eklemek istiyorsunuz: ");
-        int secim= sc.nextInt();
-        while (secim>=1){
-            System.out.print("Ürün ismi giriniz: ");
+        String secim= sc.nextLine();
+        while (illegalArgumentExceptionEkleme(secim)){
+            System.out.println("Kaç urun eklemek istiyorsunuz: ");
+            secim=sc.nextLine();
+        }
+      //if (TryCatch.illegalArgumentExceptionEkleme(secim)){
+      //   urunTanimlama();
+      // }
+        int sec=Integer.parseInt(secim);
+        while (sec>0){
+            System.out.print("Ürün ismi giriniz : ");
             String isim=sc.next().toUpperCase();
+            sc.nextLine();
+            System.out.print("Üretici firmayı giriniz : ");
+            String uretici= sc.next().toUpperCase();
+            System.out.print("Ürünün Birimini(Kasa,Çuval) Giriniz : ");
+            String birim= sc.next().toUpperCase();
+            while (illegalArgumentExceptionEklemeString(birim)){
+                System.out.print("Ürünün Birimini(Kasa,Çuval) Giriniz : ");
+                birim=sc.next();
+            }
+            System.out.print("Ürünün miktarini giriniz : ");
+           String miktar= sc.next();
+            while (illegalArgumentExceptionEkleme(miktar)){
+                System.out.print("Ürünün miktarini giriniz : ");
+                miktar=sc.next();
+            }
+            System.out.println("\n\n");
+           int miktar1=Integer.parseInt(miktar);
+
             if(!urunler.containsValue(isim)){
                 id++;
             }
-            sc.nextLine();
-            System.out.print("Üretici firmayı giriniz:");
-            String uretici= sc.nextLine().toUpperCase();
-            System.out.print("ürünün birimini giriniz");
-            String birim= sc.nextLine().toUpperCase();
-            System.out.print("Ürünün miktarinizi giriniz");
-           int miktar= sc.nextInt();
-
-
-            Urun urun= new Urun(isim,uretici,miktar,birim,null);
+            Urun urun= new Urun(isim,uretici,miktar1,birim,null);
             urunler.put(id,urun);
-
-
-            secim--;
-
-            System.out.println(urunler);
-
+            sec--;
+           urunListele();
+            System.out.println("\n\n");
         }
 
     }
@@ -43,22 +60,45 @@ public class Methods {
             System.out.println("Ürün olmadığı için Ürün Tanımlamaya Yönlendiriliyorsunuz");
             urunTanimlama();
         }
-        System.out.println(urunler);
+        System.out.printf(B+"%-9s %-10s %-10s %-10s %-10s %-10s\n", "ID", " Ürün", " Üretici", "Miktar", "Birim", "Raf");
+        System.out.println("====================================================================================");
+        Set<Integer> keySets = urunler.keySet();
+        Collection<Urun> valueSet = urunler.values();
+        for (Integer each : keySets) {
+            List<Urun> valuesList = new ArrayList<>();
+            valuesList.add(urunler.get(each));
+            int index = 0;
+            while (index < valuesList.size()) {
+                System.out.printf("%-9s %-10s %-10s %-10d %-10s %-10s\n", each, valuesList.get(index).getUrunIsmi(), valuesList.get(index).getUretici(),
+                        valuesList.get(index).getMiktar(), valuesList.get(index).getBirim(), valuesList.get(index).getRaf());
+                index++;
+            }
+        }
     }
     public static void urunGirisi(){
         if (urunler.isEmpty()){
             System.out.println("Ürün olmadığı için Ürün Tanımlamaya Yönlendiriliyorsunuz");
             urunTanimlama();
         }
-        System.out.println("ürün id si giriniz");
-        int girId= sc.nextInt();
-        System.out.println("Miktar giriniz");
-        int mikt= sc.nextInt();
-
+        System.out.println("ürün id si giriniz : ");
+        String id= sc.nextLine();
+        while (illegalArgumentExceptionEkleme(id)){
+            System.out.print("ürün id si giriniz : ");
+            id=sc.nextLine();
+        }
+        int girId=Integer.parseInt(id);
+        System.out.println("Miktar giriniz : ");
+        String miktar= sc.nextLine();
+        while (illegalArgumentExceptionEkleme(miktar)){
+            System.out.print("Miktar giriniz : ");
+            miktar=sc.nextLine();
+        }
+        int mikt= Integer.parseInt(miktar);
         if (urunler.containsKey(girId)){
             urunler.get(girId).setMiktar(urunler.get(girId).getMiktar()+mikt);
             System.out.println("Deponuza "+mikt+" kg "+urunler.get(girId).getUrunIsmi() +" girişi yapılmıştır");
         }else System.out.println("Bu id'de bir ürün yok canım");
+        urunListele();
 
     }
     public static void urunuRafaKoy(){
@@ -66,27 +106,43 @@ public class Methods {
             System.out.println("Ürün olmadığı için Ürün Tanımlamaya Yönlendiriliyorsunuz");
             urunTanimlama();
         }
-        System.out.println("Rafa eklenecek ürünün id'sini giriniz:");
-        int rafId=sc.nextInt();
+        System.out.println("Rafa eklenecek ürünün id'sini giriniz : ");
+        String id=sc.nextLine();
+        while (illegalArgumentExceptionEkleme(id)){
+            System.out.print("Rafa eklenecek ürünün id'sini giriniz : ");
+            id=sc.nextLine();
+        }
+        int rafId=Integer.parseInt(id);
         urunler.get(rafId).setRaf(urunler.get(rafId).getUrunIsmi());
         System.out.println(urunler.get(rafId).getUrunIsmi()+" Ürününüz "+urunler.get(rafId).getRaf()+" Rafına Yerleştiriliyor..." );
-        System.out.println(urunler);
+        urunListele();
     }
     public static void urunCikisi(){
         if (urunler.isEmpty()){
             System.out.println("Ürün olmadığı için Ürün Tanımlamaya Yönlendiriliyorsunuz");
             urunTanimlama();
         }
-        System.out.println("Çıkış yapılacak ürünün id'sini giriniz:");
-        int cikisId=sc.nextInt();
-        System.out.println("Miktar giriniz");
-        int miktCikis= sc.nextInt();
+        System.out.println("Çıkış yapılacak ürünün id'sini giriniz : ");
+        String id=sc.nextLine();
+        while (illegalArgumentExceptionEkleme(id)){
+            System.out.print("Çıkış yapılacak ürünün id'sini giriniz : ");
+            id=sc.nextLine();
+        }
+        int cikisId=Integer.parseInt(id);
+        System.out.println("Miktar giriniz : ");
+        String miktar= sc.nextLine();
+        while (illegalArgumentExceptionEkleme(miktar)){
+            System.out.print("Miktar giriniz : ");
+            miktar=sc.nextLine();
+        }
+        int miktCikis= Integer.parseInt(miktar);
         if (urunler.containsKey(cikisId)){
             if (urunler.get(cikisId).getMiktar()>=miktCikis){
                urunler.get(cikisId).setMiktar(urunler.get(cikisId).getMiktar()-miktCikis);
                 System.out.println("Deponuzdan "+miktCikis+" kg "+urunler.get(cikisId).getUrunIsmi() +" çıkışı yapılmıştır");
             }else  System.out.println("Aradığınız miktara ulaşılamıyor");
         }
+        urunListele();
 
 
     }

@@ -60,6 +60,7 @@ public class C01_LambdaExpression {
             System.out.print(w+ " ");
         }
     }
+
 //Task : "Functional Programming" kullanarak list elemanlarını aynı satirda aralarında bosluk olacak sekilde print ediniz.
     public static void printElFunctional(List<Integer> sayi){
         sayi.//aksiyona girecek list coll.
@@ -93,6 +94,9 @@ public class C01_LambdaExpression {
                                             //MethodKaynagı::Method->meth reference
     }
     public static void yazdir(int a){//normal Allahın methodu tek aksiyonlu ->seed method(tohum)->refere edilecek method
+        System.out.print(a+" ");
+    }
+    public static void yazdirString(String a){//normal Allahın methodu tek aksiyonlu ->seed method(tohum)->refere edilecek method
         System.out.print(a+" ");
     }
     public static void printElFunctional2(List<Integer> sayi){//functional pr
