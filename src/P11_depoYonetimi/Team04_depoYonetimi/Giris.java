@@ -20,7 +20,7 @@ public class Giris {
 
     public void girisPaneli() {
         String secim;
-        do {
+
             System.out.println(G + "=======" + clk + uzm + krpz + glnyuz + "MANAV DEPOMUZA HOŞGELDİNİZ" + glnyuz + krpz + uzm + clk + "======\r\n"
                     + "   ____________________              ____________________   \n"
                     + "   | 1-URUN TANIMLAMA |              |  2-URUN LİSTELE  |   \n"
@@ -32,6 +32,7 @@ public class Giris {
                     + "   | 5-URUN CIKISI    |              |  0-BITIRME       |   \n"
                     + "   ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯              ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯  " + R);
             System.out.println("Lütfen yapmak istediginiz islemi seçiniz  : ");
+        do {
             secim = sc.nextLine();
             switch (secim) {
                 case "1":
@@ -53,14 +54,15 @@ public class Giris {
                 case "5":
                     Methods.urunCikisi();
                     girisPaneli();
+
                     break;
                 case "0":
                     System.out.println("Çıkış yapıyorsunuz Güle güle.....");
-                    System.exit(0);
+                   System.exit(0);
                     break;
 
             }
             System.out.println();
-        } while (!secim.equals("Q"));
+        } while (!secim.equals("0"));
     }
 }

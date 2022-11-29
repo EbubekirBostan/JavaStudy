@@ -1,5 +1,7 @@
 package j36_Map;
 
+import j99_Lambda.C01_LambdaExpression;
+
 import java.util.HashMap;
 
 public class C02_keySet_values {
@@ -21,6 +23,7 @@ public class C02_keySet_values {
         System.out.println("hm.values() = " + hm.values());//[300 Euro, 234 Euro, 333 Euro, 183 Euro, 296 Euro, 111 Euro]
         System.out.println("   ***   ");
         //Task-> hm key ve value değerlerini satır satır print ediniz.with loop(for-each)
+
 
 
         for (String s : hm.keySet()) {//key

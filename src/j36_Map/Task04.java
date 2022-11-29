@@ -1,7 +1,7 @@
 package j36_Map;
 
-import java.util.HashMap;
-import java.util.Scanner;
+import java.sql.Array;
+import java.util.*;
 
 public class Task04 {
 
@@ -21,11 +21,27 @@ public class Task04 {
      *
      * İpucu : "." özel karakter olduğu için "\\." şeklinde split ediniz.
      * */
-
-
-
     public static void main(String[] args) {
-
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Bir Kelime Giriniz: ");
+        String metin=sc.nextLine();
+        String cumle[]=metin.split("\\.");
+        List<String> kelime=new ArrayList<>();
+        for (int i = 0; i < cumle.length ; i++) {
+            kelime.add(String.valueOf(cumle[i].split(" ")));
+        }
+        HashMap<String,Integer> hm=new HashMap<>();
+        int count=0;
+        for (int i = 0; i < kelime.size() ; i++) {
+            hm.put(kelime.get(i),count);
+            for (int j = 0; j < kelime.size() ; j++) {
+                if (kelime.get(j).contains(kelime.get(i))){
+                    count++;
+                }
+            }
+        }
+        System.out.println("hm = " + hm);
+//ali ali ata ata bak bak. veli ata bak veli bak ata. can bak ata veli ve ali ile ata bak
     }
 
 }

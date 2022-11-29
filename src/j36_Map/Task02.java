@@ -29,8 +29,8 @@ public class Task02 {
         System.out.println("kartvizit = " + kartvizit);
         System.out.println("kartvizit.get(\"QA Bekir\").get(\"telefon\") = " + kartvizit.get("QA Bekir").get("telefon"));
 
-        Map<Integer,Kartvizit> krt=new HashMap<>();
-        Kartvizit k1=new Kartvizit("Bekir","bekir@","silifke","5414331633");
+        Map<Integer, Task02_Kartvizit> krt=new HashMap<>();
+        Task02_Kartvizit k1=new Task02_Kartvizit("Bekir","bekir@","silifke","5414331633");
         krt.put(k1.id,k1);
         System.out.println("krt = " + krt);
         System.out.println("krt.get(k1.id) = " + krt.get(k1.id));

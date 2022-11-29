@@ -8,6 +8,14 @@ public class Task11 {
        Kullanıcıdan tek seferde alacağınız 2 kelimelik ad soyadı 2 ayrı kelimeye ayırınız,
        ad ayrı soyad ayrı sekilde ekrana yazdırınız.
        */
+        Scanner sc=new Scanner(System.in);
+        System.out.println("aadsoyad  gir");
+        String adSoyad= sc.nextLine();
+        String ad= adSoyad.substring(0,adSoyad.indexOf(" "));
+        String soyad= adSoyad.substring(adSoyad.indexOf(" ")+1);
+        System.out.println(ad);
+        System.out.println(soyad);
+
 
     }
 }

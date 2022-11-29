@@ -20,6 +20,8 @@ public class C06_distinct {
         karakterSayisiSiraliTekrarsiz(menu);
         System.out.println("\n******");
         sonHarfTersSirali(menu);
+        System.out.println("\n******");
+        ciftSyiliKareTkrsizBk(menu);
 
     }//main sonu
     //Task : List elemanlarini alafabetik buyuk harf ve  tekrarsiz print ediniz.
@@ -48,6 +50,15 @@ public static void karakterSayisiSiraliTekrarsiz(List<String > menu){
 
     }
     // Task : listin elemanlarin karakterlerinin cift sayili  karelerini hesaplayan,ve karelerini tekrarsiz buyukten kucuge sirali  print ediniz...
+    public static void ciftSyiliKareTkrsizBk(List<String > menu){
+        menu.stream().
+                map(String::length).
+                filter(C01_LambdaExpression::ciftMi).
+                map(C01_LambdaExpression::karesi).
+                sorted(Comparator.reverseOrder()).
+                distinct().
+                forEach(C01_LambdaExpression::yazdir);
+    }
 
 
 
