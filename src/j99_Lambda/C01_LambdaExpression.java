@@ -97,7 +97,7 @@ public class C01_LambdaExpression {
         System.out.print(a+" ");
     }
     public static void yazdirString(String a){//normal Allahın methodu tek aksiyonlu ->seed method(tohum)->refere edilecek method
-        System.out.print(a+" ");
+        System.out.println(a+" ");
     }
     public static void printElFunctional2(List<Integer> sayi){//functional pr
         sayi.//aksiyona girecek list coll.

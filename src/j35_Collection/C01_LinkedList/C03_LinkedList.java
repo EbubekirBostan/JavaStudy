@@ -1,6 +1,7 @@
 package j35_Collection.C01_LinkedList;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.LinkedList;
 
 public class C03_LinkedList {
@@ -27,6 +28,8 @@ public class C03_LinkedList {
         System.out.println("ll2.get(2) = " + ll2.get(2));//ll2.get(2) = Gülsüm
         System.out.println("ll2.getFirst() = " + ll2.getFirst());//ll2.getFirst() = javaCAN
         System.out.println("ll3.getLast() = " + ll3.getLast());//ll3.getLast() = Hasmayan
+        Collections.reverse(ll1);
+        System.out.println("ll1 = " + ll1);
 
 
     }
