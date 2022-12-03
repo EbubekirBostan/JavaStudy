@@ -32,6 +32,7 @@ public class C01_MethodCreation {
         //Method parantezinin icinde olusturulan variable'lara "parametre" denir.
         //Methodu call edilirken method parantezinin icine yazilan degerlere "Argument" denir.
         //Parametrenin data type'i ile Argumentin data type'i 1'e 1 eslesmeli
+
     }//main method kapanış
 
     public static int topla4(int b, int a) {//String ve int return eden method

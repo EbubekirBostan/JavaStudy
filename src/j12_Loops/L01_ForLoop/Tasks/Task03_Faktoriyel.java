@@ -19,7 +19,7 @@ public class Task03_Faktoriyel {
 
     private static void faktöriyel(int x) {
         int fakt=1;
-        for (int i=1 ; i<x+1 ; i++){
+        for (int i=1 ; i<=x ; i++){
             fakt*=i;
         }
         System.out.println("faktoriyel : "+fakt);

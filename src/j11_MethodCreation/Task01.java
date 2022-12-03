@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Task01 {
     public static void main(String[] args) {
-        //task>>>Girilen iki sayının eşitliğini kontrol eden method create ediniz.
+        //task>>>Girilen iki sayının eşitliğini kontrol eden method create ediniz. Bu methodu static kullanmadan diğer class da çağırınız
         Scanner scanner=new Scanner(System.in);
         System.out.print("Sayi Giriniz : ");
         int a=scanner.nextInt();

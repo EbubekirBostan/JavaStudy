@@ -3,6 +3,7 @@ package j11_MethodCreation;
 import java.util.Scanner;
 
 public class C02_MethodCreation {
+
     public static void main(String[] args) {
         //task>>> girilen 3 notun ortalamasını hesaplayan method create ediniz
         Scanner scan=new Scanner(System.in);
