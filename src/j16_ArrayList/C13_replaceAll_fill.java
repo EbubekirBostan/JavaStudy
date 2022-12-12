@@ -7,7 +7,7 @@ import java.util.List;
 
 public class C13_replaceAll_fill {
     public static void main(String[] args) {
-        // rplaceAll();->Listte belirli bir elemanı belirli bir değer iele update eder.
+        // rplaceAll();->Listte belirli bir elemanı belirli bir değer ile update eder.
         List<Integer> listSayi=new ArrayList<>(Arrays.asList(1,24,23,14,19,60,1,55,27,1,38));
         System.out.println("listSayi = " + listSayi);//[1, 24, 23, 14, 19, 60, 1, 55, 27, 1, 38]
         Collections.replaceAll(listSayi,1,20);// sayı listine 1 yerine 20 değeri atandı

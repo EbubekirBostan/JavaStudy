@@ -18,7 +18,5 @@ public class MyConstructor {
         this.x -= 4;// inst x variable -4 update edildi
         System.out.println("-x"+x);
     }
-    public static void main(String[] args) {
-        MyConstructor mc1= new MyConstructor(4,3);// 2 int parametre 4 ve 3 atanarak cons call edildi
-    }
+
 }

@@ -13,19 +13,19 @@ public class _06_arraylist6 {
      */
 
     public static void main(String[] args) {
-        List<Integer> numList=new ArrayList<>(List.of(5,4,6,2,1));
-        System.out.println("hillNum(numList) = " + hillNum(numList));//hillNum(numList) = [2]
+        ArrayList<Integer> listSayilar=new ArrayList<>(List.of(5,4,6,2,1));
+        System.out.println(hillNum(listSayilar));
+
     }
 
-    private static List<Integer> hillNum(List<Integer> numList) {
-        List<Integer> num=new ArrayList<>();
-        for (int a=1 ; a<numList.size()-1 ; a++){
-                if (numList.get(a)<numList.get(a-1) && numList.get(a)>numList.get(a+1)){
-                    num.add(numList.get(a));
-                }
+    private static List<Integer> hillNum(ArrayList<Integer> listSayilar) {
+       List<Integer> sayı=new ArrayList<>();
+        for (int i = 1; i < listSayilar.size()-1 ; i++) {
+            if (listSayilar.get(i)<listSayilar.get(i-1) && listSayilar.get(i)>listSayilar.get(i+1)){
+               sayı.add(listSayilar.get(i));
             }
-        return num;
+        }
+        return sayı;
     }
-
 }
 

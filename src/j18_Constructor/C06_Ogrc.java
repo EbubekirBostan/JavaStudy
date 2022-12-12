@@ -1,6 +1,6 @@
 package j18_Constructor;
 
-public class C06_Ogrc {// ogrc obj kalıphane
+public class C06_Ogrc {// ogrc obj pojo
     //Fields
     String isim="Merwe Hanım";
     int yas;
@@ -8,8 +8,8 @@ public class C06_Ogrc {// ogrc obj kalıphane
     int age;
 
     public C06_Ogrc(String isim, int yas) {
-       // this.isim = isim;
-        //this.yas = yas;
+      // this.isim = isim;
+       // this.yas = yas;
         name=isim;
         age=yas;
         System.out.println("cons taki name :"+isim);

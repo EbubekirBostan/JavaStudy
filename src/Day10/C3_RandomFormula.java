@@ -14,7 +14,7 @@ public class C3_RandomFormula { public static void main(String[] args) {
     //(int) (Math.random() * ((max - min) + 1)) + min;
 
     int min = 10;
-    int max = 67;
+    int max = 40;
 
     int randomNum = (int) (Math.random() * ((max - min) + 1)) + min;
 

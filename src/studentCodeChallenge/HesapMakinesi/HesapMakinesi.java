@@ -7,14 +7,17 @@ public class HesapMakinesi {
     double y;
     char secim;
 
+    public HesapMakinesi() {
+    }
+
     public HesapMakinesi(double x, double y, char secim) {
         this.x = x;
         this.y = y;
         this.secim = secim;
     }
 
-    public HesapMakinesi() {
-    }
+
+
     public double toplama(double x, double y){
         return (x+y);
     }

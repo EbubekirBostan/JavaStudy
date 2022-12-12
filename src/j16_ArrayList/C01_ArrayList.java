@@ -9,7 +9,7 @@ public class C01_ArrayList {
         int sayi=33;// tek bir data saklayabilen variable
         int sayi1[]=new int[5];//5 int değer saklar
         int sayi2[][]=new int[5][6];//30 int değer saklar
-        ArrayList<Integer> sayiList=new ArrayList<>();// istenildiği kadar değer saklar
+        List<Integer> sayiList=new ArrayList<>();// istenildiği kadar değer saklar
         /*
      Array List genel Tanimi:
 

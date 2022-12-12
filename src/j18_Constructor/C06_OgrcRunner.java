@@ -5,7 +5,8 @@ public class C06_OgrcRunner {
         C06_Ogrc tlb=new C06_Ogrc("Nadia Komaniçi",21);
         System.out.println("tlb.isim = " + tlb.isim);//tlb.isim = Nadia Komaniçi
         System.out.println("tlb.yas = " + tlb.yas);//tlb.yas = 21
-
+        System.out.println("tlb.name = " + tlb.name);
+        System.out.println("tlb.age = " + tlb.age);
 
     }
 }

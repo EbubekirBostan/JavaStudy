@@ -7,6 +7,5 @@ Constructor kullanacak şekilde Runner ve Hesap class'ları olan bir hesap makin
     public static void main(String[] args) {
         HesapMakinesi obj=new HesapMakinesi();
         obj.giris();
-
     }
 }

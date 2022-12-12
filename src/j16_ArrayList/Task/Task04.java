@@ -23,9 +23,7 @@ public class Task04 {
             }
         }
         System.out.println("aOlmayan = " + aOlmayan);// bizden isim ismiyle istiyor listti
-        isim.clear();// ismi boşalttık
-        isim.addAll(aOlmayan);//isim listine a olmayanları attık
-        System.out.println("isim = " + isim);// yazdırdık
+
 
 
     }
